@@ -1,24 +1,30 @@
-# Object-Detection-using-YOLO-v4
-In this project, I'm gonna use YOLO to detect objects when driving, it can be used for self-driving car applications.
+# Human Pose Estimation 
 
-Compared to other neural networks, YOLO is unique because it detects objects by looking at the overall scene (image or video) as a whole, instead of analyzing individual regions at a time. This results in some level of tradeoff for speed over precision. Despite this, YOLO is one of the most powerful realtime object detection architectures today, and is ideal to power the vision behind driverless cars.
+Human pose estimation is a rapidly evolving subject in the field of computer vision. Many companies, including tech giants like Microsoft, Google, Apple etc, have been working on building robust ML solutions for human pose estimation. The applications are limitless. For example, it can form the basis for sign language recognition, posture correction, exercise and finess, gesture control, and sports training. It can also enable the overlay of digital content on top of the physical world in augmented reality applications. 
 
-When trained, YOLO learns a generalized representation of the class of objects - meaning it is likely to perform well when presented with an unfamiliar representation of the object (shadowed, eclipsed, etc), and not get thrown off when there are other unexpected objects in the scene. This is because, by definition, it was trained to identify objects when considering the scene has a whole.
-Detecting facial landmarks has numerous applications including drowsy driver detection, emotion detection, virtual makeup, and HCI applications to ease communication for disabled people, to name a few. Facial feature detection is also referred to as “facial landmark detection”, “facial keypoint detection”, and “face alignment” 
+In this notebook, we will demonstrate the use of Google's [**MediaPipe Pose**](https://google.github.io/mediapipe/solutions/pose.html) model to:
 
-## YOLO with OpenCV
-Here are a few reasons you may want to use OpenCV for YOLO:
+1. Detect and draw pose landmarks
+2. Draw landmark connections
+3. Acquire the pixel coordinates of landmarks
 
-Easy integration with an OpenCV application: If your application already uses OpenCV and you simply want to use YOLOv4, you don’t have to worry about compiling and building the extra Darknet code.
-OpenCV CPU version is 9x faster: OpenCV’s CPU implementation of the DNN module is astonishingly fast. For example, Darknet when used with OpenMP takes about 2 seconds on a CPU for inference on a single image. In contrast, OpenCV’s implementation runs in a mere 0.22 seconds! Check out table below.
-Python support: Darknet is written in C, and it does not officially support Python. In contrast, OpenCV does. There are python ports available for Darknet though.
+<br>
+<center>
+<img src="https://opencv.org/wp-content/uploads/2021/10/c0-m17-01-Feature-Image.png" alt="Human Pose Estimation">
+</center>
+<br>
 
-## More about YOLO
-https://github.com/AlexeyAB/darknet
+The connected keypoint skeleton shown below is a way to visualize the human pose. Based on the position of the keypoints in 2D or 3D coordinate system, decisions can be taken. Apart from the skeleton-based model, other models that are used in human pose visualization are, contour-based and volume-based models. All of them have their advantages and disadvantages. MediaPipe uses a skeleton-based 3D model called Pose Landmark Model (BlazePose GHUM 3D). The landmark model predicts the location of 33 pose landmarks or keypoints as shown below.
+
+<br>
+<center>
+<img src="https://opencv.org/wp-content/uploads/2021/10/c0-m17-mediapipe-pose-landmarks.png" alt="Pose landmarks">
+</center>
+<br>
 
 ## Output Sample
 
+<img width="599" alt="Screen Shot 2022-01-18 at 7 57 12 AM" src="https://user-images.githubusercontent.com/42128166/149973626-79353ddb-4f75-4731-825b-4261eba35846.png">
 
-
-(Video Source: https://www.pexels.com/video/vehicles-on-the-road-5274079/)
+(Video Source: https://www.pexels.com/video/man-practicing-kick-boxing-in-a-ring-5752183/)
 
